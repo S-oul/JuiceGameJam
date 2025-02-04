@@ -22,12 +22,11 @@ public class Player : MonoBehaviour
 
     void UpdateMovement()
     {
-        float move = Input.GetAxis("Horizontal");
-        if (Mathf.Abs(move) < deadzone) { return; }
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
 
-        move = Mathf.Sign(move);
-        float delta = move * speed * Time.deltaTime;
-        transform.position = GameManager.Instance.KeepInBounds(transform.position + Vector3.right * delta);
+        Vector3 delta = new Vector2(moveX * speed * Time.deltaTime, moveY * speed * Time.deltaTime);
+        transform.position = GameManager.Instance.KeepInBounds(transform.position + delta);
     }
 
     void UpdateActions()
