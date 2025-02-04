@@ -84,6 +84,8 @@ public class Wave : MonoBehaviour
 
     private void UpdateShoot()
     {
+        if(invaders.Count <= 0) { return; }
+        
         shootCooldown -= Time.deltaTime;
         if (shootCooldown > 0) { return; }
 

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -20,11 +22,12 @@ public class Player : MonoBehaviour
 
     void UpdateMovement()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        float move = Input.GetAxis("Horizontal");
+        if (Mathf.Abs(move) < deadzone) { return; }
 
-        Vector3 delta = new Vector2(moveX * speed * Time.deltaTime, moveY * speed * Time.deltaTime);
-        transform.position = GameManager.Instance.KeepInBounds(transform.position + delta);
+        move = Mathf.Sign(move);
+        float delta = move * speed * Time.deltaTime;
+        transform.position = GameManager.Instance.KeepInBounds(transform.position + Vector3.right * delta);
     }
 
     void UpdateActions()
