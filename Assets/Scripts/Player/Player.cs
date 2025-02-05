@@ -16,11 +16,23 @@ public class Player : MonoBehaviour
 
     private float lastShootTimestamp = Mathf.NegativeInfinity;
 
+    int playerLife = 3;
+    [SerializeField] private float timeInvicible = 1f;
+    bool IsInvicible = false;
+
+
+    SpriteRenderer spriteRenderer;
+
     private void Awake()
     {
-        if(Instance)
+        if (Instance)
+        {
             Destroy(gameObject);
+            return;
+        }
         Instance = this;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -63,8 +75,20 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag(collideWithTag)) { return; }
+        if (!collision.gameObject.CompareTag(collideWithTag) || IsInvicible) { return; }
+        playerLife--;
+        print(playerLife);
+        if (playerLife == 0) GameManager.Instance.PlayGameOver();
+        else StartCoroutine(InvicibiltyFrames());
+    }
 
-        GameManager.Instance.PlayGameOver();
+    public IEnumerator InvicibiltyFrames()
+    {
+        IsInvicible = true;
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(timeInvicible);
+        spriteRenderer.color = Color.white;
+        IsInvicible = false;
+
     }
 }

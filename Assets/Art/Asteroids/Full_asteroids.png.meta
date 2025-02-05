@@ -537,7 +537,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Full_asteroids_0: -946037668975663208
+      Full_asteroids_1: 8541112239100558105
+      Full_asteroids_10: 3280724479164934513
+      Full_asteroids_11: -2924474429002250486
+      Full_asteroids_12: 7525105840016530666
+      Full_asteroids_13: 5889436804903751275
+      Full_asteroids_2: 8809319938251629378
+      Full_asteroids_3: 3682350898318260103
+      Full_asteroids_4: 8656247273302812791
+      Full_asteroids_5: -2851871305326731854
+      Full_asteroids_6: 1945025106249708235
+      Full_asteroids_7: -5041523500430413216
+      Full_asteroids_8: 6654051698117740466
+      Full_asteroids_9: 2344366230646301692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
