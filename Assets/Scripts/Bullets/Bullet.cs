@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
         Bullet bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/EnemyBullet")).GetComponent<Bullet>();
         bullet.direction = direction;
         bullet.speed = speed;
-        bullet.transform.localScale *= size;
+        bullet.gameObject.transform.localScale = Vector3.one * size;
         bullet.type = type;
 
         if (type == EBulletType.PLAYER)

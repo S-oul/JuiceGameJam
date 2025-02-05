@@ -44,7 +44,7 @@ public class BulletGenerator : MonoBehaviour
                 {
                     remainingBullets--;
                     angle += angleDelta;
-                    Bullet.CreateBullet(EBulletType.BASIC, Quaternion.Euler(0, 0, angle) * transform.up, speed)
+                    Bullet.CreateBullet(EBulletType.BASIC, Quaternion.Euler(0, 0, angle) * transform.up, speed, size)
                         .At(transform.position);
 
                     yield return new WaitForSecondsRealtime(delta);
@@ -65,7 +65,7 @@ public class BulletGenerator : MonoBehaviour
                         Quaternion spreadRotation = Quaternion.AngleAxis(currentAngle, transform.forward);
                         Vector3 direction = spreadRotation * transform.up;
                         
-                        Bullet.CreateBullet(EBulletType.BASIC, direction.normalized, speed)
+                        Bullet.CreateBullet(EBulletType.BASIC, direction.normalized, speed, size)
                             .At(transform.position);;
                     }
                     yield return new WaitForSecondsRealtime(delta);
@@ -80,7 +80,7 @@ public class BulletGenerator : MonoBehaviour
                 {
                     remainingBullets--;
                     angle += 360f / amountOfBullets;
-                    Bullet.CreateBullet(EBulletType.BASIC, Quaternion.Euler(0, 0, angle) * transform.up, speed)
+                    Bullet.CreateBullet(EBulletType.BASIC, Quaternion.Euler(0, 0, angle) * transform.up, speed, size)
                         .At(transform.position);;
                 }
                 break;
