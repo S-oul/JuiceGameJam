@@ -11,11 +11,14 @@ public class Invader : MonoBehaviour
 
     internal Action<Invader> onDestroy;
 
+    DissolveMesh dissolver;
+
     public Vector2Int GridIndex { get; private set; }
 
     public void Initialize(Vector2Int gridIndex)
     {
         this.GridIndex = gridIndex;
+        dissolver = GetComponent<DissolveMesh>();
     }
 
     public void OnDestroy()
@@ -27,8 +30,8 @@ public class Invader : MonoBehaviour
     {
         if(!collision.gameObject.CompareTag(collideWithTag)) { return; }
 
-        Destroy(gameObject);
-        Destroy(collision.gameObject);
+        StartCoroutine(dissolver.DissolveAfterDelay());
+        
     }
 
     public void Shoot()

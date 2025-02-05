@@ -31,8 +31,15 @@ public class Player : MonoBehaviour
 
     void UpdateMovement()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        float moveX = 0;
+        float moveY = 0;
+
+        if (Input.GetKey(KeyCode.D)) moveX = 1;
+        if (Input.GetKey(KeyCode.A)) moveX = -1;
+
+        if (Input.GetKey(KeyCode.W)) moveY = 1;
+        if (Input.GetKey(KeyCode.S)) moveY = -1;
+
 
         Vector3 delta = new Vector2(moveX * speed * Time.deltaTime, moveY * speed * Time.deltaTime);
         transform.position = GameManager.Instance.KeepInBounds(transform.position + delta);
