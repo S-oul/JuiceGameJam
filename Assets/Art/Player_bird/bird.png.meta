@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a6fea1c087f64dd49a48b1d635873cdd
+guid: a79220de75a421146af8325862bcdafa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 997559306385921956
-    second: "Capture d'\xE9cran 2025-02-05 092658_0"
+      213: -5064401156898091283
+    second: bird_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Capture d'\xE9cran 2025-02-05 092658_0"
+      name: bird_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 106
-        height: 92
+        x: 162
+        y: 14
+        width: 700
+        height: 998
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4a7948367ea08dd00800000000000000
-      internalID: 997559306385921956
+      spriteID: dee030beaf1a7b9b0800000000000000
+      internalID: -5064401156898091283
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "Capture d'\xE9cran 2025-02-05 092658_0": 997559306385921956
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

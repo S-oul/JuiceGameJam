@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Planet_02_0: 8806274951630206263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
