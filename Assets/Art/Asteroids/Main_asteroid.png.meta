@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: d8e3aaa09063170408fe87d36c923395
+guid: ab425841fb03c52478e7ad0224e35a87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -691288932682348864
-    second: une-patate_0
+      213: -5412181589910863408
+    second: Main_asteroid_0
+  - first:
+      213: -2512178546763859948
+    second: Main_asteroid_1
+  - first:
+      213: 1327285105418128147
+    second: Main_asteroid_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,19 +90,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -111,6 +104,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -178,13 +184,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: une-patate_0
+      name: Main_asteroid_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1707
-        height: 1280
+        x: 592
+        y: 990
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +199,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c64f4ad06c0866f0800000000000000
-      internalID: -691288932682348864
+      spriteID: 0d14479d48114e4b0800000000000000
+      internalID: -5412181589910863408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_asteroid_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 564
+        width: 7
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41878cbfbe2f22dd0800000000000000
+      internalID: -2512178546763859948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main_asteroid_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 28
+        width: 934
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31b4d1865c67b6210800000000000000
+      internalID: 1327285105418128147
       vertices: []
       indices: 
       edges: []
@@ -212,8 +262,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      une-patate_0: -691288932682348864
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
