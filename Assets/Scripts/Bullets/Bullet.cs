@@ -35,6 +35,7 @@ public class Bullet : MonoBehaviour
         bullet.direction = direction;
         bullet.speed = speed;
         bullet.transform.localScale *= size;
+        bullet.type = type;
 
         if (type == EBulletType.PLAYER)
             bullet.gameObject.tag = "Player";
