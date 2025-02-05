@@ -1,22 +1,45 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] Vector3 startVelocity;
-    [SerializeField] float TimeToDie = 5f;
-    // Start is called before the first frame update
-    void Awake()
+    [Header("Bullet Data")]
+    public Vector3 direction;
+    public float speed;
+    
+    private void Update()
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = startVelocity;
-        StartCoroutine(WaitToDie());
+        transform.Translate(direction * (speed * Time.deltaTime));
     }
 
-    IEnumerator WaitToDie()
+    public static Bullet CreateBullet(EBulletType type, Vector3 direction, float speed, float size = 0.2f)
     {
-        yield return new WaitForSeconds(TimeToDie);
-        Destroy(this.gameObject);
+        Bullet bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/EnemyBullet")).GetComponent<Bullet>();
+        bullet.direction = direction;
+        bullet.speed = speed;
+        bullet.transform.localScale *= size;
+
+        if (type == EBulletType.PLAYER)
+            bullet.gameObject.tag = "Player";
+        
+        return bullet;
     }
+
+    public void At(Vector3 position) => transform.position = position;
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+}
+
+public enum EBulletType
+{
+    PLAYER,
+    BASIC,
+    HEAD_HUNTER,
+    EXPLOSIVE
 }

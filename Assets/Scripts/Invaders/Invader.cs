@@ -25,7 +25,7 @@ public class Invader : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag != collideWithTag) { return; }
+        if(!collision.gameObject.CompareTag(collideWithTag)) { return; }
 
         Destroy(gameObject);
         Destroy(collision.gameObject);
@@ -33,6 +33,7 @@ public class Invader : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(bulletPrefab, shootAt.position, Quaternion.identity);
+        Bullet.CreateBullet(EBulletType.BASIC, -transform.up, 1f)
+            .At(shootAt.position);
     }
 }
