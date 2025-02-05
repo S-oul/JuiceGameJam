@@ -182,8 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   amountOfBullets: 50
-  delta: 0.1
-  duration: 5
+  delta: 0
+  duration: 0
   angleDelta: 20
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadzone: 0.2
-  speed: 2
+  speed: 4
   shootAt: {fileID: 495127406}
   shootCooldown: 0.3
   collideWithTag: Untagged
@@ -369,7 +369,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.3
+  m_Radius: 0.1
 --- !u!1 &805531689
 GameObject:
   m_ObjectHideFlags: 0

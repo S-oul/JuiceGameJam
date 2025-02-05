@@ -29,7 +29,7 @@ public class Invader : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(!collision.gameObject.CompareTag(collideWithTag)) { return; }
-
+        Destroy(collision.gameObject);
         StartCoroutine(dissolver.DissolveAfterDelay());
         
     }
