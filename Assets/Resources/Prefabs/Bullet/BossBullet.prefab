@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 8901371870798798308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.545, y: 0.956, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2813306821376561297, guid: eb9c6a54276a5314296053a953f82366, type: 3}
-  m_Color: {r: 1, g: 0.8836636, b: 0, a: 1}
+  m_Sprite: {fileID: 3332086664408765080, guid: d16b737028d013b4fab99e517872275b, type: 3}
+  m_Color: {r: 1, g: 0.18748453, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,6 @@ MonoBehaviour:
   type: 0
   direction: {x: 0, y: 0, z: 0}
   speed: 0
-  followTime: 0
 --- !u!58 &7187537139655989992
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -215,7 +214,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -225,22 +224,22 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10745239
-        inSlope: 0.41123775
-        outSlope: 0.41123775
+        value: 0.6198273
+        inSlope: -0.23168156
+        outSlope: -0.23168156
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.7648401
+        outWeight: 0.992248
       - serializedVersion: 3
-        time: 0.122174196
-        value: 0.115706764
-        inSlope: -0.1709268
-        outSlope: -0.1709268
+        time: 0.42004767
+        value: 0.3030455
+        inSlope: -0.739315
+        outSlope: -0.739315
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
-        outWeight: 0.22034968
+        inWeight: 0.33333334
+        outWeight: 0.28167844
       - serializedVersion: 3
         time: 1
         value: 0
@@ -255,9 +254,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.88235295, b: 0, a: 1}
-      key1: {r: 1, g: 0.972808, b: 0.7688679, a: 0}
-      key2: {r: 1, g: 0.972808, b: 0.7688679, a: 0}
+      key0: {r: 0.9137255, g: 0.36116815, b: 0, a: 1}
+      key1: {r: 0.9339623, g: 0.70086986, b: 0.18943575, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -265,16 +264,16 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 65535
+      ctime2: 0
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 63029
-      atime2: 63029
-      atime3: 65535
+      atime1: 3277
+      atime2: 65535
+      atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
@@ -282,15 +281,15 @@ TrailRenderer:
       m_Mode: 0
       m_ColorSpace: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
-    shadowBias: 0
+    shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.4
+  m_MinVertexDistance: 0.1
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
