@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-    
+
     [SerializeField] private float deadzone = 0.3f;
     [SerializeField] private float speed = 1f;
     [SerializeField] private float _bulletSpeed = 3f;
@@ -14,6 +14,13 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private float shootCooldown = 1f;
     [SerializeField] private string collideWithTag = "Untagged";
+
+    [SerializeField] int playerHP = 3;
+    bool IsInvicible = false;
+    internal Action OnHit;
+    float timeInvicible = 1.5f;
+
+    SpriteRenderer spriteRenderer;
 
     private float lastShootTimestamp = Mathf.NegativeInfinity;
 
@@ -26,14 +33,13 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance)
+        if (Instance) Destroy(this);
+        else
         {
-            Destroy(gameObject);
-            return;
+            Instance = this;
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            OnHit += OnHitVoid;
         }
-        Instance = this;
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -58,14 +64,32 @@ public class Player : MonoBehaviour
         transform.position = GameManager.Instance.KeepInBounds(transform.position + delta);
     }
 
+    private void OnHitVoid()
+    {
+        if (!IsInvicible)
+        {
+            playerHP--;
+            if (playerHP <= 0) GameManager.Instance.PlayGameOver();
+            StartCoroutine(InvicibiltyFrames());
+        }
+    }
+    public IEnumerator InvicibiltyFrames()
+    {
+        IsInvicible = true;
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(timeInvicible);
+        spriteRenderer.color = Color.white;
+        IsInvicible = false;
+
+    }
     void UpdateActions()
     {
-        if (Input.GetKey(KeyCode.Space) 
-            &&  Time.time > lastShootTimestamp + shootCooldown )
+        if (Time.time > lastShootTimestamp + shootCooldown)
         {
             Shoot();
         }
     }
+
 
     void Shoot()
     {
@@ -76,20 +100,7 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag(collideWithTag) || IsInvicible) { return; }
-        playerLife--;
-        print(playerLife);
-        if (playerLife == 0) GameManager.Instance.PlayGameOver();
-        else StartCoroutine(InvicibiltyFrames());
-    }
-
-    public IEnumerator InvicibiltyFrames()
-    {
-        IsInvicible = true;
-        spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(timeInvicible);
-        spriteRenderer.color = Color.white;
-        IsInvicible = false;
-
+        if (!collision.gameObject.CompareTag(collideWithTag)) { return; }
+        OnHit?.Invoke();
     }
 }

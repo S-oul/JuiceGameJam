@@ -12,6 +12,7 @@ public class Invader : MonoBehaviour
     internal Action<Invader> onDestroy;
 
     DissolveMesh dissolver;
+    Collider2D col;
 
     public Vector2Int GridIndex { get; private set; }
 
@@ -19,17 +20,19 @@ public class Invader : MonoBehaviour
     {
         this.GridIndex = gridIndex;
         dissolver = GetComponent<DissolveMesh>();
+        col = GetComponent<Collider2D>();
     }
 
     public void OnDestroy()
     {
-        onDestroy?.Invoke(this);
+        if(Application.isPlaying) onDestroy?.Invoke(this);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(!collision.gameObject.CompareTag(collideWithTag)) { return; }
         Destroy(collision.gameObject);
+        col.GetComponent<Collider2D>().enabled = false; 
         StartCoroutine(dissolver.DissolveAfterDelay());
         
     }

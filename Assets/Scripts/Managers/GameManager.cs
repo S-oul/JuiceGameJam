@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 [DefaultExecutionOrder(-100)]
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] public GameStates gameState = 0;
     public enum DIRECTION { Right = 0, Up = 1, Left = 2, Down = 3 }
 
     public static GameManager Instance = null;
@@ -14,9 +15,25 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float gameOverHeight;
 
+    [SerializeField] private Boss boss;
+
+    public enum GameStates
+    {
+        Invader,
+        Transition,
+        Boss,
+        Credits
+    }
     void Awake()
     {
         Instance = this;
+    }
+
+    public void ChangeToBossState()
+    {
+        gameState += 1;
+        StartCoroutine(boss.StartBoss());
+
     }
 
     public Vector3 KeepInBounds(Vector3 position)

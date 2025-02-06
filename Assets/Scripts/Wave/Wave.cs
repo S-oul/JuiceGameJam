@@ -216,6 +216,8 @@ public class Wave : MonoBehaviour
                 invaderPerRow[indexRow] = row;
             }
         }
+
+        if (invaders.Count <= 0) GameManager.Instance.ChangeToBossState();
     }
 
     // Get position of an invader in the bounding box according to it's index
