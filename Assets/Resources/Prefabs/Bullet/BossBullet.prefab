@@ -106,6 +106,7 @@ MonoBehaviour:
   type: 0
   direction: {x: 0, y: 0, z: 0}
   speed: 0
+  particleTransform: {fileID: 0}
   followTime: 0
 --- !u!58 &7187537139655989992
 CircleCollider2D:
