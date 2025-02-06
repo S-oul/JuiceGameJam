@@ -34,8 +34,7 @@ public class GameManager : MonoBehaviour
     public void ChangeToBossState()
     {
         gameState += 1;
-        StartCoroutine(boss.StartBoss());
-
+        StartCoroutine(boss.StartBoss()); 
     }
 
     public Vector3 KeepInBounds(Vector3 position)

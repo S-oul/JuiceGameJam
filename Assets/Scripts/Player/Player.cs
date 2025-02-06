@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float deadzone = 0.3f;
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float bulletSize = 0.2f;
     [SerializeField] private float _bulletSpeed = 3f;
     
     [SerializeField] private Transform shootAt = null;
@@ -17,15 +19,10 @@ public class Player : MonoBehaviour
 
     [SerializeField] int playerHP = 3;
     bool IsInvicible = false;
-    internal Action OnHit;
+    internal Action<int> OnHit;
     float timeInvicible = 1.5f;
 
     private float lastShootTimestamp = Mathf.NegativeInfinity;
-
-    int playerLife = 3;
-
-
-    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -35,6 +32,7 @@ public class Player : MonoBehaviour
             Instance = this;
             spriteRenderer = GetComponent<SpriteRenderer>();
             OnHit += OnHitVoid;
+            OnHit += UIManager.Instance.Yippie;
         }
     }
 
@@ -61,7 +59,7 @@ public class Player : MonoBehaviour
         transform.position = GameManager.Instance.KeepInBounds(transform.position + delta);
     }
 
-    private void OnHitVoid()
+    private void OnHitVoid(int score)
     {
         if (!IsInvicible)
         {
@@ -74,8 +72,8 @@ public class Player : MonoBehaviour
     {
         IsInvicible = true;
         spriteRenderer.color = Color.red;
+        spriteRenderer.DOColor(Color.white, timeInvicible);
         yield return new WaitForSeconds(timeInvicible);
-        spriteRenderer.color = Color.white;
         IsInvicible = false;
 
     }
@@ -90,7 +88,7 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        Bullet.CreateBullet(EBulletType.PLAYER, transform.up, _bulletSpeed)
+        Bullet.CreateBullet(EBulletType.PLAYER, transform.up, _bulletSpeed, bulletSize)
             .At(shootAt.position);
         lastShootTimestamp = Time.time;
     }
@@ -98,6 +96,6 @@ public class Player : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.CompareTag(collideWithTag)) { return; }
-        OnHit?.Invoke();
+        OnHit?.Invoke(playerHP);
     }
 }
