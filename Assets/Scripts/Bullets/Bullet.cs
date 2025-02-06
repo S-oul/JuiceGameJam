@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour
     public EBulletType type;
     public Vector3 direction;
     public float speed;
+    public Transform particleTransform;
 
     [Header("Head Hunter Data")] [ShowIf("IsHeadHunter")]
     public float followTime;
@@ -51,6 +52,8 @@ public class Bullet : MonoBehaviour
         if(type == EBulletType.PLAYER) bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/PlayerBullet")).GetComponent<Bullet>();
         else bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/EnemyBullet")).GetComponent<Bullet>();
 
+        if(bullet.particleTransform)
+            bullet.particleTransform.localScale = Vector3.one * size;
         bullet.direction = direction;
         bullet.transform.up = direction;
         bullet.speed = speed;

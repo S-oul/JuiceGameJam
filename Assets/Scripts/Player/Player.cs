@@ -33,9 +33,13 @@ public class Player : MonoBehaviour
         {
             Instance = this;
             spriteRenderer = GetComponent<SpriteRenderer>();
-            OnHit += OnHitVoid;
-            OnHit += UIManager.Instance.Yippie;
         }
+    }
+
+    private void Start()
+    {
+        OnHit += OnHitVoid;
+        OnHit += UIManager.Instance.Yippie;
     }
 
     void Update()
