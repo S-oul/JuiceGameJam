@@ -1,4 +1,6 @@
+using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -81,14 +83,24 @@ public class GameManager : MonoBehaviour
     }
 
     public bool IsBelowGameOver(float position)
-    {        
+    {
         return position < transform.position.y + (gameOverHeight - bounds.y * 0.5f);
     }
 
     public void PlayGameOver()
     {
         Debug.Log("Game Over");
-        Time.timeScale = 0f;
+        StartCoroutine(TimeScaler());
+    }
+    IEnumerator TimeScaler()
+    {
+        while (Time.timeScale > 0)
+        {
+            Time.timeScale -= Time.deltaTime/4;
+            yield return null;
+        }
+
+
     }
 
     public void OnDrawGizmos()
