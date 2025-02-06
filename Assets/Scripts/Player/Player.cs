@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     internal Action<int> OnHit;
     float timeInvicible = 1.5f;
 
+    SpriteRenderer spriteRenderer;
+
     private float lastShootTimestamp = Mathf.NegativeInfinity;
 
     private void Awake()
@@ -63,7 +65,8 @@ public class Player : MonoBehaviour
     {
         if (!IsInvicible)
         {
-            playerHP--;
+            if(playerHP > 0 ) playerHP--;
+
             if (playerHP <= 0) GameManager.Instance.PlayGameOver();
             StartCoroutine(InvicibiltyFrames());
         }

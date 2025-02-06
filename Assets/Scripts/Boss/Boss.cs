@@ -72,8 +72,12 @@ public class Boss : MonoBehaviour
         Destroy(collision.gameObject);
         BossLife -= 1f;
 
-        if (BossLife < 0f)
-        {
+        if (phase2 && BossLife < 0f) {
+
+            print("GG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+        }
+        else if (BossLife < 0f) {
             BossLife = 50;
             phase2 = true;
             print("Phase2");
