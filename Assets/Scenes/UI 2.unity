@@ -10952,6 +10952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  wave: {fileID: 1833304614}
   bounds: {x: 16, y: 11}
   gameOverHeight: 0.8
   boss: {fileID: 1415363276}
@@ -11466,7 +11467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whereToGo: {fileID: 1235368024}
-  BossLife: 100
+  whereItLive: {fileID: 0}
+  BossLife: 5
   force: 1.4
   frequence: 1
   myTime: 0

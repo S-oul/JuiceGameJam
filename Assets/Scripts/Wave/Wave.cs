@@ -22,7 +22,7 @@ public class Wave : MonoBehaviour
     [SerializeField] private float speedMax;
 
     // Random shoot rate min and max depending on difficulty progress
-    [SerializeField] private Vector2 shootRandomMin = new(3f,5f);
+    [SerializeField] private Vector2 shootRandomMin = new(3f, 5f);
     [SerializeField] private Vector2 shootRandomMax = new(1f, 3f);
 
     // A cozy time with no alien harm at start of the game. I guess Player shoot first.
@@ -47,13 +47,21 @@ public class Wave : MonoBehaviour
     List<Column> invaderPerColumn = new(); // Keeps track of invaders per column. A column will be removed if empty.
     List<Row> invaderPerRow = new(); // Keeps track of invaders per row. A row will be removed if empty.
 
+    Vector3 Startpos;
+
     void Awake()
     {
+        Startpos = transform.position;
+        CreateWave();
+    }
+    public void CreateWave()
+    {
+        transform.position = Startpos;
         shootCooldown = timeBeforeFirstShoot;
 
         for (int i = 0; i < columns; i++)
         {
-            invaderPerColumn.Add(new() { id = i, invaders= new() });
+            invaderPerColumn.Add(new() { id = i, invaders = new() });
         }
         for (int i = 0; i < rows; i++)
         {
@@ -73,7 +81,6 @@ public class Wave : MonoBehaviour
                 invaderPerRow[j].invaders.Add(invader);
             }
         }
-        
     }
 
     void Update()
@@ -84,8 +91,8 @@ public class Wave : MonoBehaviour
 
     private void UpdateShoot()
     {
-        if(invaders.Count <= 0) { return; }
-        
+        if (invaders.Count <= 0) { return; }
+
         shootCooldown -= Time.deltaTime;
         if (shootCooldown > 0) { return; }
 
@@ -102,7 +109,7 @@ public class Wave : MonoBehaviour
 
     void UpdateMovement()
     {
-        if(invaders.Count <= 0) { return; }
+        if (invaders.Count <= 0) { return; }
 
         // Speed depends on remaining invaders ratio
         float t = 1f - (invaders.Count - 1) / (float)((rows * columns) - 1);
@@ -150,7 +157,7 @@ public class Wave : MonoBehaviour
                         GameManager.Instance.PlayGameOver();
                     }
 
-                    if(distance >= downStep)
+                    if (distance >= downStep)
                     {
                         // Adjust "delta" to place invaders exactly at end of downStep
                         delta -= (distance - downStep);
@@ -174,7 +181,7 @@ public class Wave : MonoBehaviour
                 move = (moveCount / 2) % 2 == 0 ? Move.Right : Move.Left; break;
             case Move.Right:
             case Move.Left:
-            default: 
+            default:
                 move = Move.Down; break;
         }
         distance = 0f;
@@ -188,7 +195,7 @@ public class Wave : MonoBehaviour
         invaders.Remove(invader);
 
         int indexColumn = invaderPerColumn.FindIndex(x => x.id == invader.GridIndex.x);
-        if(indexColumn != -1)
+        if (indexColumn != -1)
         {
             Column column = invaderPerColumn[indexColumn];
             column.invaders.Remove(invader);
@@ -223,7 +230,7 @@ public class Wave : MonoBehaviour
     // Get position of an invader in the bounding box according to it's index
     Vector3 GetPosition(int i, int j)
     {
-        return new Vector3( GetColumnPosition(i), GetRowPosition(j), 0f );
+        return new Vector3(GetColumnPosition(i), GetRowPosition(j), 0f);
     }
 
     // Get position of an invader in the bounding box according to it's column index

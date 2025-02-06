@@ -6,6 +6,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     [SerializeField] private Transform whereToGo;
+    [SerializeField] private Transform whereItLive;
 
     [SerializeField] private float BossLife = 100;
 
@@ -22,6 +23,8 @@ public class Boss : MonoBehaviour
     [SerializeField] float timeToRed = 0.4f;
 
     Coroutine makeRed;
+    Coroutine patern;
+
 
     float PatternCD = 4f;
 
@@ -44,7 +47,7 @@ public class Boss : MonoBehaviour
         }
         GameManager.Instance.gameState += 1;
         isSet = true;
-        StartCoroutine(DoPattern());
+        patern = StartCoroutine(DoPattern());
     }
 
     private void Update()
@@ -53,7 +56,6 @@ public class Boss : MonoBehaviour
         {
             myTime += Time.deltaTime;
             transform.position = new Vector3(Mathf.Sin(myTime * force) * frequence, transform.position.y, transform.position.z);
-
         }
     }
 
@@ -62,7 +64,20 @@ public class Boss : MonoBehaviour
         if (!phase2) Instantiate(EasyPattern[Random.Range(0, EasyPattern.Count - 1)], transform.position - new Vector3(0, 3.4f, 3), Quaternion.identity, transform);
         else Instantiate(HardPattern[Random.Range(0, HardPattern.Count - 1)], transform.position - new Vector3(0, 3.4f, 3), Quaternion.identity, transform);
         yield return new WaitForSeconds(PatternCD);
-        StartCoroutine(DoPattern());
+        patern = StartCoroutine(DoPattern());
+    }
+
+    public IEnumerator EndBoss()
+    {
+        while (Vector3.Distance(transform.position, whereItLive.position) > .05f)
+        {
+            transform.position = Vector3.Lerp(transform.position, whereItLive.position, Time.deltaTime);
+            yield return null;
+        }
+        print("Good");
+        GameManager.Instance.gameState = GameManager.GameStates.Invader;
+        GameManager.Instance.wave.CreateWave();
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -74,11 +89,15 @@ public class Boss : MonoBehaviour
 
         if (phase2 && BossLife < 0f) {
 
-            print("GG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
+            isSet = false;
+            BossLife = 100;
+            StopCoroutine(makeRed);
+            StopCoroutine(patern);
+            StartCoroutine(EndBoss());
+            return;
         }
         else if (BossLife < 0f) {
-            BossLife = 50;
+            BossLife = 5;
             phase2 = true;
             print("Phase2");
         }
