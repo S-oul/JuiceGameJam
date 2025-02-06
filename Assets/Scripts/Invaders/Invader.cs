@@ -34,7 +34,6 @@ public class Invader : MonoBehaviour
         Destroy(collision.gameObject);
         col.GetComponent<Collider2D>().enabled = false; 
         StartCoroutine(dissolver.DissolveAfterDelay());
-        
     }
 
     public void Shoot()

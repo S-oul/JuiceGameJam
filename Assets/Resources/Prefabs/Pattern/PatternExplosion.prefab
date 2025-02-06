@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7159720622405110290}
   - component: {fileID: 6656488722523559159}
   m_Layer: 0
-  m_Name: Fan
+  m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,13 +76,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  amountOfBullets: 8
-  delta: 0.8
-  duration: 6.4
+  type: 2
+  amountOfBullets: 10
+  delta: 0
+  duration: 0
   angleDelta: 20
   shootAmount: 8
   minMaxAngle: {x: 80, y: 180}
   bulletType: 1
-  speed: 1
-  size: 0.1
+  speed: 3
+  size: 0.3
