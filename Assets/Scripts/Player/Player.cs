@@ -103,6 +103,6 @@ public class Player : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.CompareTag(collideWithTag)) { return; }
-        OnHit?.Invoke(playerHP);
+        if(playerHP > 0) OnHit?.Invoke(playerHP);
     }
 }
