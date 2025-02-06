@@ -260,11 +260,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadzone: 0.2
   speed: 4
+  bulletSize: 0.2
   _bulletSpeed: 3
   shootAt: {fileID: 495127406}
   shootCooldown: 0.3
   collideWithTag: Untagged
-  timeInvicible: 1
+  playerHP: 3
 --- !u!212 &582271455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -372,60 +373,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
---- !u!1 &771548102
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 771548104}
-  - component: {fileID: 771548103}
-  m_Layer: 0
-  m_Name: Tete chercheuse
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &771548103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771548102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  amountOfBullets: 4
-  delta: 0.8
-  duration: 3.2
-  angleDelta: 20
-  shootAmount: 5
-  minMaxAngle: {x: 90, y: 270}
-  bulletType: 2
-  speed: 1
-  size: 0.2
---- !u!4 &771548104
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771548102}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.95313025, y: -0.8850495, z: -0.04221003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &805531689
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,8 +494,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0853a885e711343b390ac1d9e6cb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 0
   bounds: {x: 16, y: 9}
   gameOverHeight: 0.8
+  boss: {fileID: 0}
 --- !u!4 &879569044
 Transform:
   m_ObjectHideFlags: 0
@@ -652,7 +601,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1049814352773763289, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1135925432590308415, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
@@ -660,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1428349293326607658, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2061854443711750277, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_Name
@@ -668,11 +617,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2061854443711750277, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2438350258904454000, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874384816843175697, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+      propertyPath: delta
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874384816843175697, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+      propertyPath: speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874384816843175697, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+      propertyPath: duration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874384816843175697, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+      propertyPath: bulletType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874384816843175697, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+      propertyPath: amountOfBullets
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4111788763617156563, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -716,22 +685,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4540341315921887690, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4778068492243358950, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4782863806912049758, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5226371901735876302, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4782863806912049758, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+    - {fileID: 1049814352773763289, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+    - {fileID: 4778068492243358950, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+    - {fileID: 4540341315921887690, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
+    - {fileID: 2438350258904454000, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661d8d97858ab454a987e075a4b429ad, type: 3}
@@ -1031,4 +1005,3 @@ SceneRoots:
   - {fileID: 9039935135175679950}
   - {fileID: 8182755672511289401}
   - {fileID: 2127394590}
-  - {fileID: 771548104}
