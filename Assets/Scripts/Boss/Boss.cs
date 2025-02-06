@@ -84,6 +84,10 @@ public class Boss : MonoBehaviour
     {
         if (!isSet || !collision.gameObject.CompareTag("Player")) return;
 
+        UIManager.Instance.AddComboPart();
+        ScoreManager.Instance.SetScore(ScoreManager.Instance.score + (1499 * UIManager.Instance.currentCombo));
+        
+        Destroy(Instantiate(Resources.Load<GameObject>("Prefabs/Particles/Explosion"), collision.transform.position, Quaternion.Euler(-90f, 0, 0)), 1f);
         Destroy(collision.gameObject);
         BossLife -= 1f;
 

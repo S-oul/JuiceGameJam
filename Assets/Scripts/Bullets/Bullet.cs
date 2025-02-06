@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
                 break;
             case EBulletType.HEAD_HUNTER:
                 transform.position += (Vector3.Lerp(direction, (Player.Instance.transform.position - transform.position).normalized, 0.85f) * (speed * Time.deltaTime));
+                transform.up = (Player.Instance.transform.position - transform.position).normalized;
                 followTime -= Time.deltaTime;
                 if (followTime < 0)
                 {
@@ -38,8 +39,10 @@ public class Bullet : MonoBehaviour
                 break;
             case EBulletType.EXPLOSIVE:
                 transform.position += ((Player.Instance.transform.position - transform.position).normalized * (speed * Time.deltaTime));
-                if (Vector3.Distance(Player.Instance.transform.position, transform.position) < 5f)
+                transform.up = (Player.Instance.transform.position - transform.position).normalized;
+                if (Vector3.Distance(Player.Instance.transform.position, transform.position) < 3f)
                 {
+                    Instantiate(Resources.Load<GameObject>("Prefabs/Pattern/PatternExplosion"), transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
                 break;

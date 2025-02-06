@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         OnHit += OnHitVoid;
-        OnHit += UIManager.Instance.Yippie;
+        OnHit += UIManager.Instance.UpdateHealthSlot;
     }
 
     void Update()
