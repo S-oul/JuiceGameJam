@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
 
 
         Vector3 delta = new Vector2(moveX * speed * Time.deltaTime, moveY * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift)) delta /= 2;
         transform.position = GameManager.Instance.KeepInBounds(transform.position + delta);
     }
 
@@ -64,7 +65,8 @@ public class Player : MonoBehaviour
     {
         if (!IsInvicible)
         {
-            playerHP--;
+            if(playerHP > 0 ) playerHP--;
+
             if (playerHP <= 0) GameManager.Instance.PlayGameOver();
             StartCoroutine(InvicibiltyFrames());
         }
@@ -97,6 +99,6 @@ public class Player : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.CompareTag(collideWithTag)) { return; }
-        OnHit?.Invoke(playerHP);
+        if(playerHP > 0) OnHit?.Invoke(playerHP);
     }
 }
