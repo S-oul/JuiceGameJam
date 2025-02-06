@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a648f478b7e28b045962210f62cc7a12
+guid: d3fdd4d67b19fa54da60101ea8e4ff59
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Sixtyfour
+  - Bruno Ace
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
