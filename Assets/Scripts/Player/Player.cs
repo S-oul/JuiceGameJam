@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] int playerHP = 3;
     bool IsInvicible = false;
     internal Action<int> OnHit;
-    float timeInvicible = 1.5f;
+    [SerializeField] float timeInvicible = 1.5f;
 
     SpriteRenderer spriteRenderer;
     List<AudioSource> audioSource = new List<AudioSource>();
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
     void Shoot()
     {
 
-        audioSource[0].pitch = 1 + UnityEngine.Random.Range(-0.25f, 0.25f);
+        audioSource[0].pitch = 1 + UnityEngine.Random.Range(-0.5f, 0.5f);
         audioSource[0].Play();
 
         Bullet.CreateBullet(EBulletType.PLAYER, transform.up, _bulletSpeed, bulletSize)
