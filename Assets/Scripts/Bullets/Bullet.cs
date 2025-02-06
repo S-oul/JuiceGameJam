@@ -1,15 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Bullet : MonoBehaviour
 {
+
+    private bool IsHeadHunter => type == EBulletType.HEAD_HUNTER;
+    
     [Header("Bullet Data")]
     public EBulletType type;
     public Vector3 direction;
     public float speed;
+
+    [Header("Head Hunter Data")] [ShowIf("IsHeadHunter")]
+    public float followTime;
     
     private void Update()
     {
@@ -20,9 +27,17 @@ public class Bullet : MonoBehaviour
                 transform.Translate(direction * (speed * Time.deltaTime));
                 break;
             case EBulletType.HEAD_HUNTER:
+                transform.Translate(Vector3.Lerp(direction, (Player.Instance.transform.position - transform.position).normalized, 0.85f) * (speed * Time.deltaTime));
+                followTime -= Time.deltaTime;
+                if (followTime < 0)
+                {
+                    type = EBulletType.BASIC;
+                    direction = (Player.Instance.transform.position - transform.position).normalized;
+                }
+                break;
             case EBulletType.EXPLOSIVE:
                 transform.Translate((Player.Instance.transform.position - transform.position).normalized * (speed * Time.deltaTime));
-                if (type == EBulletType.EXPLOSIVE && Vector3.Distance(Player.Instance.transform.position, transform.position) < 5f)
+                if (Vector3.Distance(Player.Instance.transform.position, transform.position) < 5f)
                 {
                     Destroy(gameObject);
                 }
