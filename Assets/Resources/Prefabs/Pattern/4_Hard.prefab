@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &262839526192425769
+--- !u!1 &13055135306810112
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2016009427751208515}
-  - component: {fileID: 81738237786746768}
+  - component: {fileID: 6110120695738843599}
+  - component: {fileID: 1663822970694171340}
   m_Layer: 0
-  m_Name: Ring
+  m_Name: Spiral (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2016009427751208515
+  m_IsActive: 1
+--- !u!4 &6110120695738843599
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262839526192425769}
+  m_GameObject: {fileID: 13055135306810112}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,27 +32,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7791779533927713621}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &81738237786746768
+--- !u!114 &1663822970694171340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262839526192425769}
+  m_GameObject: {fileID: 13055135306810112}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  amountOfBullets: 8
-  delta: 0.5
-  duration: 4
-  angleDelta: 0
+  type: 0
+  amountOfBullets: 7
+  delta: 0.2
+  duration: 1.4
+  angleDelta: 215
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
   bulletType: 1
-  speed: 1.4
+  speed: 2
   size: 0.2
 --- !u!1 &710075830137086047
 GameObject:
@@ -69,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7791779533927713621
 Transform:
   m_ObjectHideFlags: 0
@@ -84,10 +84,286 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8195845492161634892}
+  - {fileID: 6823062155248716013}
+  - {fileID: 4981381237956198177}
+  - {fileID: 6110120695738843599}
   - {fileID: 7860116987014840349}
-  - {fileID: 2016009427751208515}
+  - {fileID: 4908700760566902016}
+  - {fileID: 6229913267919851551}
+  - {fileID: 2671835371901331016}
+  - {fileID: 5248242187098975560}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2549272023045973060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4981381237956198177}
+  - component: {fileID: 5639233357345702996}
+  m_Layer: 0
+  m_Name: Spiral (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4981381237956198177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549272023045973060}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7791779533927713621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5639233357345702996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549272023045973060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  amountOfBullets: 7
+  delta: 0.2
+  duration: 1.4
+  angleDelta: -25
+  shootAmount: 0
+  minMaxAngle: {x: 0, y: 0}
+  bulletType: 1
+  speed: 1.5
+  size: 0.2
+--- !u!1 &2995031746485365789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5248242187098975560}
+  - component: {fileID: 6023260575340171839}
+  m_Layer: 0
+  m_Name: Ring
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5248242187098975560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995031746485365789}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7791779533927713621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6023260575340171839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995031746485365789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  amountOfBullets: 9
+  delta: 0.5
+  duration: 4.5
+  angleDelta: -20
+  shootAmount: 5
+  minMaxAngle: {x: 90, y: 170}
+  bulletType: 1
+  speed: 1.5
+  size: 0.35
+--- !u!1 &3378520574768086497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6229913267919851551}
+  - component: {fileID: 3086318825280055120}
+  m_Layer: 0
+  m_Name: Fan (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6229913267919851551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378520574768086497}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7791779533927713621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3086318825280055120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378520574768086497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  amountOfBullets: 3
+  delta: 1
+  duration: 3
+  angleDelta: -20
+  shootAmount: 5
+  minMaxAngle: {x: 180, y: 240}
+  bulletType: 1
+  speed: 2
+  size: 0.2
+--- !u!1 &3438821531979670545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6823062155248716013}
+  - component: {fileID: 3094749261457921837}
+  m_Layer: 0
+  m_Name: Spiral (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6823062155248716013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438821531979670545}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7791779533927713621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3094749261457921837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438821531979670545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  amountOfBullets: 5
+  delta: 0.6
+  duration: 3
+  angleDelta: -30
+  shootAmount: 0
+  minMaxAngle: {x: 0, y: 0}
+  bulletType: 2
+  speed: 1.2
+  size: 0.5
+--- !u!1 &4110684972125712484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4908700760566902016}
+  - component: {fileID: 5702555987654393893}
+  m_Layer: 0
+  m_Name: Fan (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4908700760566902016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110684972125712484}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7791779533927713621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5702555987654393893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110684972125712484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  amountOfBullets: 3
+  delta: 1
+  duration: 3
+  angleDelta: -20
+  shootAmount: 2
+  minMaxAngle: {x: 190, y: 210}
+  bulletType: 1
+  speed: 2
+  size: 0.2
 --- !u!1 &5439451758567799334
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8195845492161634892
 Transform:
   m_ObjectHideFlags: 0
@@ -140,7 +416,61 @@ MonoBehaviour:
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
   bulletType: 2
-  speed: 1.2
+  speed: 0.7
+  size: 0.2
+--- !u!1 &7073026603453304714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2671835371901331016}
+  - component: {fileID: 4686193118996062436}
+  m_Layer: 0
+  m_Name: Fan (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2671835371901331016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073026603453304714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7791779533927713621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4686193118996062436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073026603453304714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  amountOfBullets: 4
+  delta: 0.6
+  duration: 2.4
+  angleDelta: -20
+  shootAmount: 7
+  minMaxAngle: {x: 250, y: 360}
+  bulletType: 1
+  speed: 2
   size: 0.2
 --- !u!1 &7691584539015853563
 GameObject:
@@ -158,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7860116987014840349
 Transform:
   m_ObjectHideFlags: 0
@@ -187,12 +517,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  amountOfBullets: 8
+  amountOfBullets: 3
   delta: 1
-  duration: 8
+  duration: 3
   angleDelta: -20
-  shootAmount: 8
-  minMaxAngle: {x: 105, y: 260}
+  shootAmount: 5
+  minMaxAngle: {x: 90, y: 170}
   bulletType: 1
-  speed: 1.5
+  speed: 2
   size: 0.2
