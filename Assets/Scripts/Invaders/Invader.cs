@@ -25,7 +25,7 @@ public class Invader : MonoBehaviour
 
     public void OnDestroy()
     {
-        onDestroy?.Invoke(this);
+        if(Application.isPlaying) onDestroy?.Invoke(this);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
