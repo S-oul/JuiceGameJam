@@ -33,8 +33,8 @@ public class Bullet : MonoBehaviour
     public static Bullet CreateBullet(EBulletType type, Vector3 direction, float speed, float size = 0.2f)
     {
         Bullet bullet = null;
-        if(type == EBulletType.PLAYER) bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/PlayerBullet")).GetComponent<Bullet>();
-        else bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/EnemyBullet")).GetComponent<Bullet>();
+        if(type == EBulletType.PLAYER) bullet = Instantiate(Resources.Load<GameObject>("Ressource/Prefabs/Bullet/PlayerBullet")).GetComponent<Bullet>();
+        else bullet = Instantiate(Resources.Load<GameObject>("Ressource/Prefabs/Bullet/EnemyBullet")).GetComponent<Bullet>();
 
         bullet.direction = direction;
         bullet.speed = speed;
