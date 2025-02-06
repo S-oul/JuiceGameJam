@@ -8,6 +8,8 @@ public class Invader : MonoBehaviour
     [SerializeField] private Bullet bulletPrefab = null;
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private string collideWithTag = "Player";
+    public float bulletSpeed;
+    public float bulletSize;
 
     internal Action<Invader> onDestroy;
 
@@ -38,7 +40,7 @@ public class Invader : MonoBehaviour
 
     public void Shoot()
     {
-        Bullet.CreateBullet(EBulletType.BASIC, -transform.up, 1f)
+        Bullet.CreateBullet(EBulletType.BASIC, -transform.up, bulletSpeed, bulletSize)
             .At(shootAt.position);
     }
 }

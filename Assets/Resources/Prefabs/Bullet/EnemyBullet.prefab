@@ -79,9 +79,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2813306821376561297, guid: eb9c6a54276a5314296053a953f82366, type: 3}
-  m_Color: {r: 0.9528302, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.1882353, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   type: 0
   direction: {x: 0, y: 0, z: 0}
   speed: 0
+  followTime: 0
 --- !u!58 &7187537139655989992
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -214,7 +215,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.2
+  m_Time: 1.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -223,8 +224,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.07092285
-        value: 1
+        time: 0.15
+        value: 0.15
         inSlope: -0.21183975
         outSlope: -0.21183975
         tangentMode: 0
@@ -232,17 +233,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.98213613
       - serializedVersion: 3
-        time: 0.2517764
-        value: 0.4958752
-        inSlope: -0.61828727
-        outSlope: -0.61828727
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.87500083
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.9929078
-        value: 0.041322313
+        time: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -254,7 +246,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.040395793, b: 0, a: 1}
+      key0: {r: 0.9137255, g: 0.36078432, b: 0, a: 1}
       key1: {r: 1, g: 0.4776718, b: 0, a: 0}
       key2: {r: 1, g: 0.972808, b: 0.7688679, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

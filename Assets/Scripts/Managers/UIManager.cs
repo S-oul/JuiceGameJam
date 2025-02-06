@@ -17,6 +17,9 @@ public class UIManager : MonoBehaviour
 
     public void Yippie(int health)
     {
-        lifes[health - 1].transform.DOScale(0, 0.25f).SetEase(Ease.InBack);
+        lifes[health - 1].transform.DOScale(0, 0.25f).SetEase(Ease.InBack).OnComplete(() =>
+        {
+            lifes[health - 1].transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+        });
     }
 }

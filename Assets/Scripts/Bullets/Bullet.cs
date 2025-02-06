@@ -17,17 +17,17 @@ public class Bullet : MonoBehaviour
 
     [Header("Head Hunter Data")] [ShowIf("IsHeadHunter")]
     public float followTime;
-    
+
     private void Update()
     {
         switch (type)
         {
             case EBulletType.PLAYER:
             case EBulletType.BASIC:
-                transform.Translate(direction * (speed * Time.deltaTime));
+                transform.position += (direction * (speed * Time.deltaTime));
                 break;
             case EBulletType.HEAD_HUNTER:
-                transform.Translate(Vector3.Lerp(direction, (Player.Instance.transform.position - transform.position).normalized, 0.85f) * (speed * Time.deltaTime));
+                transform.position += (Vector3.Lerp(direction, (Player.Instance.transform.position - transform.position).normalized, 0.85f) * (speed * Time.deltaTime));
                 followTime -= Time.deltaTime;
                 if (followTime < 0)
                 {
@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
                 }
                 break;
             case EBulletType.EXPLOSIVE:
-                transform.Translate((Player.Instance.transform.position - transform.position).normalized * (speed * Time.deltaTime));
+                transform.position += ((Player.Instance.transform.position - transform.position).normalized * (speed * Time.deltaTime));
                 if (Vector3.Distance(Player.Instance.transform.position, transform.position) < 5f)
                 {
                     Destroy(gameObject);
@@ -48,10 +48,11 @@ public class Bullet : MonoBehaviour
     public static Bullet CreateBullet(EBulletType type, Vector3 direction, float speed, float size = 0.2f)
     {
         Bullet bullet = null;
-        if(type == EBulletType.PLAYER) bullet = Instantiate(Resources.Load<GameObject>("Ressource/Prefabs/Bullet/PlayerBullet")).GetComponent<Bullet>();
-        else bullet = Instantiate(Resources.Load<GameObject>("Ressource/Prefabs/Bullet/EnemyBullet")).GetComponent<Bullet>();
+        if(type == EBulletType.PLAYER) bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/PlayerBullet")).GetComponent<Bullet>();
+        else bullet = Instantiate(Resources.Load<GameObject>("Prefabs/Bullet/EnemyBullet")).GetComponent<Bullet>();
 
         bullet.direction = direction;
+        bullet.transform.up = direction;
         bullet.speed = speed;
         bullet.gameObject.transform.localScale = Vector3.one * size;
         bullet.type = type;
