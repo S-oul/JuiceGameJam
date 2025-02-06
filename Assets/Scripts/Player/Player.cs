@@ -76,8 +76,7 @@ public class Player : MonoBehaviour
     }
     void UpdateActions()
     {
-        if (Input.GetKey(KeyCode.Space)
-            && Time.time > lastShootTimestamp + shootCooldown)
+        if (Time.time > lastShootTimestamp + shootCooldown)
         {
             Shoot();
         }
