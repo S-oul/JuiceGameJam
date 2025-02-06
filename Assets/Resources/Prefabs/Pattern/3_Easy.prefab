@@ -52,6 +52,60 @@ MonoBehaviour:
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
   bulletType: 1
+  speed: 1.8
+  size: 0.2
+--- !u!1 &3683743335342758734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6117993022741807370}
+  - component: {fileID: 5042219483018174155}
+  m_Layer: 0
+  m_Name: Spiral
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6117993022741807370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683743335342758734}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2550623478015595304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5042219483018174155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683743335342758734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  amountOfBullets: 12
+  delta: 0.3
+  duration: 3.6000001
+  angleDelta: 38.72
+  shootAmount: 0
+  minMaxAngle: {x: 0, y: 0}
+  bulletType: 1
   speed: 1.5
   size: 0.2
 --- !u!1 &4808135801109431459
@@ -106,8 +160,62 @@ MonoBehaviour:
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
   bulletType: 1
-  speed: 0.7
-  size: 0.1
+  speed: 1
+  size: 0.2
+--- !u!1 &5662550831807732953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785633044927570625}
+  - component: {fileID: 7731672054652422556}
+  m_Layer: 0
+  m_Name: Fan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &785633044927570625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662550831807732953}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2550623478015595304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7731672054652422556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662550831807732953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  amountOfBullets: 4
+  delta: 0.5
+  duration: 2
+  angleDelta: 0
+  shootAmount: 1
+  minMaxAngle: {x: 0, y: 360}
+  bulletType: 2
+  speed: 1
+  size: 0.2
 --- !u!1 &6336314655649567319
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,8 +268,8 @@ MonoBehaviour:
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
   bulletType: 1
-  speed: 1
-  size: 0.1
+  speed: 1.5
+  size: 0.2
 --- !u!1 &8275331492280201134
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,5 +302,7 @@ Transform:
   - {fileID: 2695268366626635419}
   - {fileID: 5436329631546596976}
   - {fileID: 4425355855860711295}
+  - {fileID: 785633044927570625}
+  - {fileID: 6117993022741807370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1925300913479304654
+--- !u!1 &400275306932504871
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3952648644921755141}
-  - component: {fileID: 8667379150035490968}
+  - component: {fileID: 99482159627715797}
+  - component: {fileID: 4026351019619615873}
   m_Layer: 0
-  m_Name: Fan (3)
+  m_Name: Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3952648644921755141
+--- !u!4 &99482159627715797
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925300913479304654}
+  m_GameObject: {fileID: 400275306932504871}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.95313025, y: -0.8850495, z: -0.04221003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9183590867666496908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8667379150035490968
+--- !u!114 &4026351019619615873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925300913479304654}
+  m_GameObject: {fileID: 400275306932504871}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  amountOfBullets: 20
-  delta: 0.7
-  duration: 14
-  angleDelta: 10
-  shootAmount: 4
-  minMaxAngle: {x: 160, y: 320}
+  amountOfBullets: 8
+  delta: 1
+  duration: 8
+  angleDelta: -20
+  shootAmount: 5
+  minMaxAngle: {x: 90, y: 170}
   bulletType: 1
-  speed: 1.5
+  speed: 2
   size: 0.2
 --- !u!1 &2385687279414565920
 GameObject:
@@ -83,13 +83,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7159720622405110290}
-  - {fileID: 8540515160756682177}
-  - {fileID: 3370359044908176591}
-  - {fileID: 3952648644921755141}
+  - {fileID: 99482159627715797}
+  - {fileID: 5713320402026831430}
+  - {fileID: 6274673854632101633}
+  - {fileID: 2650239545729252744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4134314269940195004
+--- !u!1 &2819530296925167415
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,37 +97,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7159720622405110290}
-  - component: {fileID: 6656488722523559159}
+  - component: {fileID: 2650239545729252744}
+  - component: {fileID: 7258844762983462877}
   m_Layer: 0
-  m_Name: Fan
+  m_Name: Fan (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7159720622405110290
+--- !u!4 &2650239545729252744
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4134314269940195004}
+  m_GameObject: {fileID: 2819530296925167415}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.95313025, y: -0.8850495, z: -0.04221003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9183590867666496908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6656488722523559159
+--- !u!114 &7258844762983462877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4134314269940195004}
+  m_GameObject: {fileID: 2819530296925167415}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
@@ -135,69 +135,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   amountOfBullets: 8
-  delta: 0.8
-  duration: 6.4
-  angleDelta: 20
-  shootAmount: 8
-  minMaxAngle: {x: 80, y: 180}
-  bulletType: 1
-  speed: 1
-  size: 0.1
---- !u!1 &4452528468394507516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8540515160756682177}
-  - component: {fileID: 7666859795473181168}
-  m_Layer: 0
-  m_Name: Fan (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8540515160756682177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452528468394507516}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9183590867666496908}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7666859795473181168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452528468394507516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  amountOfBullets: 20
-  delta: 0.3
-  duration: 6
-  angleDelta: 10
+  delta: 1
+  duration: 8
+  angleDelta: -20
   shootAmount: 4
-  minMaxAngle: {x: 90, y: 210}
+  minMaxAngle: {x: 190, y: 270}
   bulletType: 1
-  speed: 1.5
-  size: 0.2
---- !u!1 &5420396502352372352
+  speed: 1.3
+  size: 0.45
+--- !u!1 &3295490208383298109
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,8 +151,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3370359044908176591}
-  - component: {fileID: 5049440819541570124}
+  - component: {fileID: 6274673854632101633}
+  - component: {fileID: 4069350008857960053}
   m_Layer: 0
   m_Name: Fan (2)
   m_TagString: Untagged
@@ -214,28 +160,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3370359044908176591
+--- !u!4 &6274673854632101633
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420396502352372352}
+  m_GameObject: {fileID: 3295490208383298109}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.95313025, y: -0.8850495, z: -0.04221003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9183590867666496908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5049440819541570124
+--- !u!114 &4069350008857960053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420396502352372352}
+  m_GameObject: {fileID: 3295490208383298109}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
@@ -243,11 +189,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   amountOfBullets: 8
-  delta: 0.8
-  duration: 6.4
-  angleDelta: 20
-  shootAmount: 6
-  minMaxAngle: {x: 180, y: 260}
+  delta: 1
+  duration: 8
+  angleDelta: -20
+  shootAmount: 4
+  minMaxAngle: {x: 90, y: 170}
   bulletType: 1
-  speed: 1
-  size: 0.1
+  speed: 1.3
+  size: 0.45
+--- !u!1 &8317320884370723346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5713320402026831430}
+  - component: {fileID: 126423387456552206}
+  m_Layer: 0
+  m_Name: Fan (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5713320402026831430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317320884370723346}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.95313025, y: -0.8850495, z: -0.04221003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9183590867666496908}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126423387456552206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317320884370723346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6389ae7c79f4e349a194767bac53a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  amountOfBullets: 8
+  delta: 1
+  duration: 8
+  angleDelta: -20
+  shootAmount: 5
+  minMaxAngle: {x: 190, y: 270}
+  bulletType: 1
+  speed: 2
+  size: 0.2

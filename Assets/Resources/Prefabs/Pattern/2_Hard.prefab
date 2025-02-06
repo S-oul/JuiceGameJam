@@ -159,7 +159,7 @@ MonoBehaviour:
   angleDelta: 60
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
-  bulletType: 1
+  bulletType: 2
   speed: 0.8
   size: 0.2
 --- !u!1 &1649726699087044229
@@ -207,15 +207,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  amountOfBullets: 6
-  delta: 1.5
-  duration: 9
-  angleDelta: 60
+  amountOfBullets: 7
+  delta: 0.7
+  duration: 4.9
+  angleDelta: 50
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
   bulletType: 1
-  speed: 0.8
-  size: 1.2
+  speed: 1
+  size: 1
 --- !u!1 &2818038206453734957
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   angleDelta: 0
   shootAmount: 0
   minMaxAngle: {x: 0, y: 0}
-  bulletType: 1
+  bulletType: 3
   speed: 1
   size: 0.2
 --- !u!1 &8746842556007041633
