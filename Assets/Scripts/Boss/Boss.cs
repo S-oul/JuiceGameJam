@@ -93,11 +93,12 @@ public class Boss : MonoBehaviour
             BossLife = 100;
             StopCoroutine(makeRed);
             StopCoroutine(patern);
+            StartCoroutine(Music.Instance.ToJazz());
             StartCoroutine(EndBoss());
             return;
         }
         else if (BossLife < 0f) {
-            BossLife = 5;
+            BossLife = 50;
             phase2 = true;
             print("Phase2");
         }

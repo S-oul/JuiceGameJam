@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Player : MonoBehaviour
 {
@@ -12,7 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private float bulletSize = 0.2f;
     [SerializeField] private float _bulletSpeed = 3f;
-    
+
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private float shootCooldown = 1f;
     [SerializeField] private string collideWithTag = "Untagged";
@@ -23,8 +26,11 @@ public class Player : MonoBehaviour
     float timeInvicible = 1.5f;
 
     SpriteRenderer spriteRenderer;
+    List<AudioSource> audioSource = new List<AudioSource>();
 
     private float lastShootTimestamp = Mathf.NegativeInfinity;
+
+
 
     private void Awake()
     {
@@ -33,6 +39,7 @@ public class Player : MonoBehaviour
         {
             Instance = this;
             spriteRenderer = GetComponent<SpriteRenderer>();
+            audioSource = GetComponents<AudioSource>().ToList();
         }
     }
 
@@ -67,9 +74,10 @@ public class Player : MonoBehaviour
 
     private void OnHitVoid(int score)
     {
+        audioSource[1].Play();
         if (!IsInvicible)
         {
-            if(playerHP > 0 ) playerHP--;
+            if (playerHP > 0) playerHP--;
 
             if (playerHP <= 0) GameManager.Instance.PlayGameOver();
             StartCoroutine(InvicibiltyFrames());
@@ -95,6 +103,10 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
+
+        audioSource[0].pitch = 1 + UnityEngine.Random.Range(-0.25f, 0.25f);
+        audioSource[0].Play();
+
         Bullet.CreateBullet(EBulletType.PLAYER, transform.up, _bulletSpeed, bulletSize)
             .At(shootAt.position);
         lastShootTimestamp = Time.time;
@@ -103,6 +115,6 @@ public class Player : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.CompareTag(collideWithTag)) { return; }
-        if(playerHP > 0) OnHit?.Invoke(playerHP);
+        if (playerHP > 0) OnHit?.Invoke(playerHP);
     }
 }

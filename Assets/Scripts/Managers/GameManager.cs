@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public void ChangeToBossState()
     {
         gameState += 1;
+        StartCoroutine(Music.Instance.ToNight());
         StartCoroutine(boss.StartBoss()); 
     }
 
