@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     
     [SerializeField] private float deadzone = 0.3f;
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float _bulletSpeed = 3f;
     
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private float shootCooldown = 1f;
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        Bullet.CreateBullet(EBulletType.PLAYER, transform.up, 3f)
+        Bullet.CreateBullet(EBulletType.PLAYER, transform.up, _bulletSpeed)
             .At(shootAt.position);
         lastShootTimestamp = Time.time;
     }
