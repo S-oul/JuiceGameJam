@@ -166,8 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveTexture: {fileID: 0}
   dissolveColor: {r: 1, g: 0, b: 0, a: 1}
-  delayBeforeStart: 0
-  dissolveTime: 2
+  dissolveTime: 1
+  dissolveSpeed: 4
 --- !u!1 &9027937785671472930
 GameObject:
   m_ObjectHideFlags: 0

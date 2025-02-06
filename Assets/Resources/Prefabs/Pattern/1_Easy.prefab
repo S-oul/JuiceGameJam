@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2206912734623284296}
   m_Layer: 0
-  m_Name: 1_Easy_Spiral_Ring_x3
+  m_Name: 1_Easy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float deadzone = 0.3f;
     [SerializeField] private float speed = 1f;
-
+    [SerializeField] private float _bulletSpeed = 3f;
+    
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private float shootCooldown = 1f;
     [SerializeField] private string collideWithTag = "Untagged";
@@ -19,9 +20,12 @@ public class Player : MonoBehaviour
     internal Action OnHit;
     float timeInvicible = 1.5f;
 
-    SpriteRenderer spriteRenderer;
-
     private float lastShootTimestamp = Mathf.NegativeInfinity;
+
+    int playerLife = 3;
+
+
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -53,6 +57,7 @@ public class Player : MonoBehaviour
 
 
         Vector3 delta = new Vector2(moveX * speed * Time.deltaTime, moveY * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift)) delta /= 2;
         transform.position = GameManager.Instance.KeepInBounds(transform.position + delta);
     }
 
@@ -85,7 +90,7 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        Bullet.CreateBullet(EBulletType.PLAYER, transform.up, 3f)
+        Bullet.CreateBullet(EBulletType.PLAYER, transform.up, _bulletSpeed)
             .At(shootAt.position);
         lastShootTimestamp = Time.time;
     }
