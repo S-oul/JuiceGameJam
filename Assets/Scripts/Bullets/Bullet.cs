@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
                 transform.Translate(direction * (speed * Time.deltaTime));
                 break;
             case EBulletType.HEAD_HUNTER:
-                transform.Translate((Player.Instance.transform.position - transform.position).normalized * (speed * Time.deltaTime));
+                transform.Translate(Vector3.Lerp(direction, (Player.Instance.transform.position - transform.position).normalized, 0.85f) * (speed * Time.deltaTime));
                 followTime -= Time.deltaTime;
                 if (followTime < 0)
                 {
