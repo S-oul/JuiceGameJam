@@ -5464,6 +5464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 331221116}
+  score: 0
 --- !u!1 &582271453
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,6 +5506,7 @@ MonoBehaviour:
   shootCooldown: 0.3
   collideWithTag: Untagged
   playerHP: 3
+  timeInvicible: 1.5
 --- !u!212 &582271455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5723,7 +5725,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 4698e73fdc315f1408b44efb98b8bdbf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.145
-  m_Pitch: 1
+  m_Pitch: 0.33
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -10821,6 +10823,12 @@ MonoBehaviour:
   - {fileID: 1230075445}
   - {fileID: 1379202429}
   - {fileID: 254087414}
+  comboNeeded: 0
+  combo: {fileID: 0}
+  comboFill: {fileID: 0}
+  mask: {fileID: 0}
+  _comboColors: []
+  currentCombo: 0
 --- !u!114 &803091794
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -52,7 +52,6 @@ public class Wave : MonoBehaviour
     void Awake()
     {
         Startpos = transform.position;
-        CreateWave();
     }
     public void CreateWave()
     {

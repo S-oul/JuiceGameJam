@@ -74,9 +74,9 @@ public class Player : MonoBehaviour
 
     private void OnHitVoid(int score)
     {
-        audioSource[1].Play();
         if (!IsInvicible)
         {
+            audioSource[1].Play();
             if (playerHP > 0) playerHP--;
 
             if (playerHP <= 0) GameManager.Instance.PlayGameOver();

@@ -102,7 +102,7 @@ public class Boss : MonoBehaviour
             return;
         }
         else if (BossLife < 0f) {
-            BossLife = 50;
+            BossLife = 100;
             phase2 = true;
             print("Phase2");
         }
