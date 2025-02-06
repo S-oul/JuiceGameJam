@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         while (Time.timeScale > 0)
         {
-            Time.timeScale -= Time.deltaTime/2;
+            Time.timeScale -= Time.deltaTime;
             yield return null;
         }
 
