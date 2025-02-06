@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3fdd4d67b19fa54da60101ea8e4ff59
+guid: 878170b4f9fc56946a6fbe6b07634362
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Bruno Ace
+  - KG Red Hands Outline
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -3,6 +3,7 @@ using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ScoreManager : MonoBehaviour
 
     public TMP_Text scoreTxt;
     
-    private long _score;
+    public long score;
     private GameObject scorePrefab;
 
     private void Awake()
@@ -55,10 +56,10 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void SetScore(long score)
+    public void SetScore(long score)
     {
-        _score = score;
-        scoreTxt.text = _score.ToString("D9");
+        this.score = score;
+        scoreTxt.text = this.score.ToString("D9");
 
         scoreTxt.transform.localScale *= 1.2f;
         scoreTxt.transform.DOScale(1, 0.025f);
@@ -72,47 +73,47 @@ public class ScoreManager : MonoBehaviour
             {
                 case > 100000000:
                     score-=100000000;
-                    SetScore(_score + 100000000);
+                    SetScore(this.score + 100000000);
                     break;
                 
                 case > 10000000:
                     score-=10000000;
-                    SetScore(_score + 10000000);
+                    SetScore(this.score + 10000000);
                     break;
                 
                 case > 1000000:
                     score-=1000000;
-                    SetScore(_score + 1000000);
+                    SetScore(this.score + 1000000);
                     break;
                 
                 case > 100000:
                     score-=100000;
-                    SetScore(_score + 100000);
+                    SetScore(this.score + 100000);
                     break;
                 
                 case > 10000:
                     score-=10000;
-                    SetScore(_score + 10000);
+                    SetScore(this.score + 10000);
                     break;
                 
                 case > 1000:
                     score-=1000;
-                    SetScore(_score + 1000);
+                    SetScore(this.score + 1000);
                     break;
                 
                 case > 100:
                     score-=100;
-                    SetScore(_score + 100);
+                    SetScore(this.score + 100);
                     break;
                 
                 case > 10:
                     score-=10;
-                    SetScore(_score + 10);
+                    SetScore(this.score + 10);
                     break;
                 
                 default:
                     score--;
-                    SetScore(_score + 1);
+                    SetScore(this.score + 1);
                     break;
             }
 

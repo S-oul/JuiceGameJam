@@ -33,14 +33,18 @@ public class Invader : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(!collision.gameObject.CompareTag(collideWithTag)) { return; }
+        Destroy(Instantiate(Resources.Load<GameObject>("Prefabs/Particles/Explosion"), collision.transform.position, Quaternion.Euler(-90f, 0, 0)), 1f);
         Destroy(collision.gameObject);
         col.GetComponent<Collider2D>().enabled = false; 
         StartCoroutine(dissolver.DissolveAfterDelay());
+        
+        UIManager.Instance.AddComboPart();
+        ScoreManager.Instance.SetScore(ScoreManager.Instance.score + (1499 * UIManager.Instance.currentCombo));
     }
 
     public void Shoot()
     {
-        Bullet.CreateBullet(EBulletType.BASIC, -transform.up, bulletSpeed, bulletSize)
+        Bullet.CreateBullet(EBulletType.EXPLOSIVE, -transform.up, bulletSpeed, bulletSize)
             .At(shootAt.position);
     }
 }
