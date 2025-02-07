@@ -95,13 +95,13 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator TimeScaler()
     {
-        while (Time.timeScale > 0)
+        while (Time.timeScale > 0.05f)
         {
             Time.timeScale -= Time.deltaTime/1.5f;
             yield return null;
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 
     public void OnDrawGizmos()

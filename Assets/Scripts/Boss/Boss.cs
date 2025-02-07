@@ -31,11 +31,13 @@ public class Boss : MonoBehaviour
     public List<GameObject> EasyPattern = new List<GameObject>();
     public List<GameObject> HardPattern = new List<GameObject>();
 
+    AudioSource aaaaaaaaaa;
 
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        aaaaaaaaaa = GetComponent<AudioSource>();   
     }
     public IEnumerator StartBoss()
     {
@@ -98,6 +100,7 @@ public class Boss : MonoBehaviour
             isSet = false;
             phase2 = false;
             BossLife = 100;
+            aaaaaaaaaa.Play();
             StopCoroutine(patern);
             StartCoroutine(Music.Instance.ToJazz());
             StartCoroutine(EndBoss());
