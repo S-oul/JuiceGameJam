@@ -5814,7 +5814,7 @@ MonoBehaviour:
   shootAt: {fileID: 195346477}
   shootCooldown: 0.15
   collideWithTag: Untagged
-  playerHP: 3
+  playerHP: 200
   timeInvicible: 1.5
 --- !u!212 &459218322
 SpriteRenderer:

@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(long score, Color color, string name = "")
     {
-        GameObject go = Instantiate(scorePrefab, transform);
+        GameObject go = Instantiate(scorePrefab, transform.GetChild(1)) ;
         TMP_Text nameTxt = go.GetComponent<TMP_Text>();
         TMP_Text scoreTxt = go.transform.GetChild(0).GetComponent<TMP_Text>();
 

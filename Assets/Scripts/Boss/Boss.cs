@@ -93,15 +93,20 @@ public class Boss : MonoBehaviour
         if (phase2 && BossLife < 0f) {
 
             isSet = false;
+            phase2 = false;
             BossLife = 100;
             StopCoroutine(makeRed);
             StopCoroutine(patern);
             StartCoroutine(Music.Instance.ToJazz());
             StartCoroutine(EndBoss());
+
+            ScoreManager.Instance.AddScore(999998, Color.red, "BOSS CLEAR BONUS");
+
             return;
         }
         else if (BossLife < 0f) {
             BossLife = 100;
+            ScoreManager.Instance.AddScore(54321, new Color(255, 125, 125), "BOSS PHASE 1 BONUS");
             phase2 = true;
             print("Phase2");
         }

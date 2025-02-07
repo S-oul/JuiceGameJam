@@ -35,7 +35,8 @@ public class GameManager : MonoBehaviour
     {
         gameState += 1;
         StartCoroutine(Music.Instance.ToNight());
-        StartCoroutine(boss.StartBoss()); 
+        StartCoroutine(boss.StartBoss());
+        ScoreManager.Instance.AddScore(98765, Color.yellow, "BONUS PHASE CLEARED!");
     }
 
     public Vector3 KeepInBounds(Vector3 position)
