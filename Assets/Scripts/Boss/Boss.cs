@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -20,8 +21,7 @@ public class Boss : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
     [SerializeField] float timeToRed = 0.4f;
-
-    Coroutine makeRed;
+    
     Coroutine patern;
 
 
@@ -90,12 +90,14 @@ public class Boss : MonoBehaviour
         Destroy(collision.gameObject);
         BossLife -= 1f;
 
+        spriteRenderer.color = Color.red;
+        spriteRenderer.DOColor(Color.white, 0.15f);
+
         if (phase2 && BossLife < 0f) {
 
             isSet = false;
             phase2 = false;
             BossLife = 100;
-            StopCoroutine(makeRed);
             StopCoroutine(patern);
             StartCoroutine(Music.Instance.ToJazz());
             StartCoroutine(EndBoss());
@@ -110,19 +112,10 @@ public class Boss : MonoBehaviour
             phase2 = true;
             print("Phase2");
         }
-
-        if (makeRed != null) StopCoroutine(makeRed);
-        makeRed = StartCoroutine(MakeHimRed());
+        
 
         float t = 1 - (BossLife / 100f) + .2f;
         frequence = Mathf.Lerp(1, 4.5f, t);
-    }
-
-    public IEnumerator MakeHimRed()
-    {
-        spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(timeToRed);
-        spriteRenderer.color = Color.white;
     }
 }
 
