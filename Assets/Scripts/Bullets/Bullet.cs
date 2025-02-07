@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
         switch (type)
         {
             case EBulletType.PLAYER:
