@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ScoreManager : MonoBehaviour
 {

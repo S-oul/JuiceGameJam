@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class Player : MonoBehaviour
 {
@@ -30,8 +28,13 @@ public class Player : MonoBehaviour
 
     private float lastShootTimestamp = Mathf.NegativeInfinity;
 
+    bool canShoot = false;
 
 
+    public void NowShoot()
+    {
+        canShoot = true;
+    }
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -94,7 +97,7 @@ public class Player : MonoBehaviour
     }
     void UpdateActions()
     {
-        if (Time.time > lastShootTimestamp + shootCooldown)
+        if (canShoot &&Time.time > lastShootTimestamp + shootCooldown)
         {
             Shoot();
         }

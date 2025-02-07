@@ -1,8 +1,6 @@
 using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-100)]
 public class GameManager : MonoBehaviour
@@ -98,11 +96,11 @@ public class GameManager : MonoBehaviour
     {
         while (Time.timeScale > 0)
         {
-            Time.timeScale -= Time.deltaTime;
+            Time.timeScale -= Time.deltaTime/1.5f;
             yield return null;
         }
 
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void OnDrawGizmos()
