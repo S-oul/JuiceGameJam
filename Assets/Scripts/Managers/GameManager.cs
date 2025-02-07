@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
